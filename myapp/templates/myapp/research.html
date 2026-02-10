@@ -1,0 +1,100 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+{% csrf_token %}
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block bg-dark sidebar vh-100">
+      <div class="position-sticky pt-3 text-white px-3">
+        <h6 class="text-uppercase border-bottom pb-2">Research Section</h6>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link text-white" href="#intro">Introduction</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#literature">Literature Review</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#methodology">Methodology</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#results-sec">Results</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#discussion">Discussion</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#references">References</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="col-md-10 ms-sm-auto px-md-5 py-4">
+
+      <div class="text-center mb-4">
+        <h2>🤖 AI Research Agent</h2>
+        <p class="text-muted">
+          Enter a topic and generate a structured research-style report.
+        </p>
+      </div>
+
+      <!-- Input -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="row g-2">
+            <div class="col-md-7">
+              <input id="query" class="form-control" placeholder="e.g. AI in healthcare">
+            </div>
+            <div class="col-md-2">
+              <input id="max_results" type="number" class="form-control" value="2">
+            </div>
+            <div class="col-md-3 d-grid">
+              <button id="runBtn" class="btn btn-primary">
+                🚀 Start Research
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="status" class="text-center mb-3 text-muted"></div>
+
+      <!-- Results -->
+      <div id="results">
+
+        <section id="intro" class="mb-4">
+          <h4>Introduction</h4>
+          <div id="intro-content"></div>
+        </section>
+
+        <section id="literature" class="mb-4">
+          <h4>Literature Review</h4>
+          <div id="literature-content"></div>
+        </section>
+
+        <section id="methodology" class="mb-4">
+          <h4>Methodology</h4>
+          <div id="methodology-content"></div>
+        </section>
+
+        <section id="results-sec" class="mb-4">
+          <h4>Results</h4>
+          <div id="results-content"></div>
+        </section>
+
+        <section id="discussion" class="mb-4">
+          <h4>Discussion</h4>
+          <div id="discussion-content"></div>
+        </section>
+
+        <section id="references" class="mb-4">
+          <h4>References</h4>
+          <div id="references-content"></div>
+        </section>
+
+      </div>
+
+      <div id="downloadDiv" class="text-center my-4"></div>
+
+    </main>
+  </div>
+</div>
+
+<script>
+  window.runResearchUrl = "/run-research/";
+  window.downloadReportTemplate = "/download-report/TOKEN/";
+</script>
+
+{% endblock %}

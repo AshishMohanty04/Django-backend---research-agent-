@@ -1,0 +1,31 @@
+body {
+  background: #f8fafc;
+}
+
+h1 {
+  letter-spacing: -0.5px;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+#results .result-card {
+  border-radius: 10px;
+  border-left: 5px solid #0d6efd;
+  background: #ffffff;
+}
+
+.result-title {
+  font-weight: 600;
+}
+
+.confidence {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+pre {
+  font-family: inherit;
+  white-space: pre-wrap;
+}

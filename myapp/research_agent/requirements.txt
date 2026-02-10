@@ -1,0 +1,8 @@
+transformers
+sentence-transformers
+duckduckgo_search
+trafilatura
+faiss-cpu        # on many platforms: pip install faiss-cpu  (or see faiss installation docs)
+fpdf
+pybtex
+networkx
