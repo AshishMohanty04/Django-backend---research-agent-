@@ -14,7 +14,7 @@ def extract_knowledge_triplets(text):
 def build_knowledge_graph(triplets):
     global _kg
     for head, relation, tail in triplets:
-        _kg.add_node(head, type="entity")
+        _kg.add_node(head, type="entity"}
         _kg.add_node(tail, type="entity")
         _kg.add_edge(head, tail, relation=relation)
 
